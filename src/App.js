@@ -7,13 +7,14 @@ import TodoList from "./TodoList";
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {todoList: [1, 2, 3]};
+        this.state = {todoList: JSON.parse(localStorage.getItem('todoList') || null) || []};
         this.addNewTodo = this.addNewTodo.bind(this);
     }
 
     addNewTodo(value) {
-        this.setState({todoList: [value, ...this.state.todoList]});
-        setTimeout(() => console.log('App state: ', this.state), 0);
+        const newTodoList = [value, ...this.state.todoList];
+        this.setState({todoList: newTodoList});
+        localStorage.setItem('todoList', JSON.stringify(newTodoList));
     }
 
     render() {
