@@ -1,5 +1,5 @@
 import React from 'react';
-import searchIcon from "./images/icons/search-icon.svg";
+import searchIcon from "../images/icons/search-icon.svg";
 
 export default class SearchTodo extends React.Component {
     render() {

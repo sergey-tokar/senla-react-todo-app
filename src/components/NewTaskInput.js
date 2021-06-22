@@ -1,12 +1,10 @@
 import React from 'react';
+import Todo from "../models/todo";
 
 export default class NewTaskInput extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            value: "",
-            onSubmit: props.onSubmit || (()=>{}),
-        };
+        this.state = {value: ""};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +15,7 @@ export default class NewTaskInput extends React.Component {
     }
 
     handleSubmit(event) {
-        this.state.onSubmit(this.state.value);
+        this.props.onSubmit(new Todo({text: this.state.value}));
         this.setState({value: ''});
         event.preventDefault();
     }

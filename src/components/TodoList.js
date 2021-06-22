@@ -12,7 +12,7 @@ export default class TodoList extends React.Component {
         console.log(todoItems);
         return (
             <ul className="todo-list">
-                {todoItems.map(todoItem => {
+                {todoItems && todoItems.map(todoItem => {
                     return (
                         <TodoItem key={uuidv4()} todo = {todoItem}/>
                     );
