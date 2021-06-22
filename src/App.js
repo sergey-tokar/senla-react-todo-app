@@ -8,8 +8,10 @@ import TodoProvider from "./providers/todo-provider";
 export default class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {todoList: TodoProvider.getTodo()};
-        this.addNewTodo = this.addNewTodo.bind(this);
+        this.state = {
+            todoList: TodoProvider.getTodo(),
+            filterDone: null,
+        };
     }
 
     addNewTodo(value) {
@@ -17,14 +19,24 @@ export default class App extends React.Component {
         TodoProvider.addTodo(value);
     }
 
-    render() {
+    changeFilter(filter) {
+        this.setState({filterDone: filter});
+    }
 
+    getFilteredTodo() {
+        if (this.state.filterDone === null) {
+            return this.state.todoList;
+        }
+        return this.state.todoList.filter(todo => this.state.filterDone === todo.done);
+    }
+
+    render() {
         return (
             <div className="todo-app-content content-wrapper">
                 <Header/>
-                <TabsNavigation/>
+                <TabsNavigation onChange={(filter) => this.changeFilter(filter)} filter={this.state.filterDone}/>
                 <NewTaskInput onSubmit={(value) => this.addNewTodo(value)}/>
-                <TodoList todoList={this.state.todoList}/>
+                <TodoList todoList={this.getFilteredTodo()}/>
             </div>
         )
     }

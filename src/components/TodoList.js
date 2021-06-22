@@ -3,13 +3,8 @@ import TodoItem from "./TodoItem";
 import { v4 as uuidv4 } from 'uuid';
 
 export default class TodoList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const todoItems = this.props.todoList;
-        console.log(todoItems);
         return (
             <ul className="todo-list">
                 {todoItems && todoItems.map(todoItem => {
