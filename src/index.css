@@ -114,6 +114,7 @@ body {
 }
 
 .tab-selector:active {
+    color: black;
     box-shadow: none;
 }
 
