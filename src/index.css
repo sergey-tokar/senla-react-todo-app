@@ -187,28 +187,23 @@ body {
     display: none;
 }
 
-.todo-item.clicked .delete-button,
-.todo-item.clicked .done-button {
+.todo-item:hover .delete-button,
+.todo-item:hover .done-button {
     display: inline-block;
 }
 
-.todo-item.important.clicked .not-important-button {
+.todo-item:hover.important .not-important-button {
     display: inline-block;
 }
 
-.todo-item.clicked .mark-important-button {
+.todo-item:hover .mark-important-button {
     display: inline-block;
 }
 
-.todo-item.clicked.done .not-important-button,
-.todo-item.clicked.done .mark-important-button
+.todo-item:hover.done .not-important-button,
+.todo-item:hover.done .mark-important-button
 {
     display: none;
-}
-
-.clicked {
-    border: 1px solid rgba(47, 128, 237, 0.5);
-    box-shadow: 0 6px 20px rgba(47, 128, 237, 0.7);
 }
 
 .delete-button,

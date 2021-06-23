@@ -9,14 +9,14 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            todoList: TodoProvider.getTodo(),
+            todoList: TodoProvider.get(),
             filterDone: null,
         };
     }
 
     addNewTodo(value) {
         this.setState({todoList: [value, ...this.state.todoList]});
-        TodoProvider.addTodo(value);
+        TodoProvider.add(value);
     }
 
     changeFilter(filter) {

@@ -24,7 +24,7 @@ export default class NewTaskInput extends React.Component {
         return (
             <form onSubmit={this.handleSubmit} className="new-task-wrapper">
                 <label className="new-task-label" htmlFor="new-task">New Task</label>
-                <textarea value={this.state.value} onChange={this.handleChange} placeholder="Напишите что нужно сделать"
+                <textarea value={this.state.value} onChange={this.handleChange} placeholder="Please write todo"
                           className="new-task-input"
                           id="new-task"/>
                 <input type="submit" className="button add-new-task-button" value="ADD"/>
