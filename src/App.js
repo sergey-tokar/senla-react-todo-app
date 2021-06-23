@@ -4,7 +4,6 @@ import TabsNavigation from "./components/TabsNavigation";
 import NewTaskInput from "./components/NewTaskInput";
 import TodoList from "./components/TodoList";
 import TodoProvider from "./providers/todo-provider";
-import TodoItem from "./components/TodoItem";
 
 export default class App extends React.Component {
     constructor(props) {

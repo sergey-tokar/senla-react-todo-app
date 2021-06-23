@@ -1,5 +1,4 @@
 import React from 'react';
-import TodoProvider from "../providers/todo-provider";
 
 export default class TodoItem extends React.Component {
 
