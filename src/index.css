@@ -110,7 +110,6 @@ body {
     background: none;
     font-weight: 900;
     color: #53565A;
-    opacity: 0.5;
     box-shadow: none;
 }
 
@@ -120,6 +119,7 @@ body {
 
 .active-tab {
     border-top: 4px solid #2F80ED;
+
 }
 
 .new-task-wrapper {
