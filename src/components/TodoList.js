@@ -29,9 +29,9 @@ export default class TodoList extends React.Component {
             <ul className="todo-list">
                 {todoItems && todoItems.map(todoItem => {
                     return (
-                        <TodoItem onChangeImportance={() => this.toggleImportance(todoItem)}
-                                  onChangeDone={() => this.toggleDone(todoItem)}
-                                  onDelete={() => this.deleteTodo(todoItem)}
+                        <TodoItem onChangeImportance={() => this.props.onChangeImportance(todoItem)}
+                                  onChangeDone={() => this.props.onChangeDone(todoItem)}
+                                  onDelete={() => this.props.onDelete(todoItem)}
                                   key={todoItem.id}
                                   todo={todoItem}/>
                     );

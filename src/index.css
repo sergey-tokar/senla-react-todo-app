@@ -164,6 +164,11 @@ body {
     background-color: #2F80ED;
 }
 
+.add-new-task-button:disabled {
+    background-color: #579ff3;
+    cursor: default;
+}
+
 .todo-list {
     padding: 6px 0 0 0;
     margin: 0 0 67px 40px;
